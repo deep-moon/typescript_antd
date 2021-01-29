@@ -1,6 +1,11 @@
-//  峰封装
+// 封装
+// public代表公有是默认选项；
+// private是私有的，只有在类中可以访问，实例的对象不可以访问，继承的类无法访问；
+// protected表示受控制的，继承的子类可以访问
 class Animal {
+    // 只能读，无法修改
     readonly name: string;
+    //  static是静态属性或方法，直接用Animal.categoies访问，不需要实例对象
     static categoies: string[] = ['mammal', 'bird'];
     static isAnimal(a){
         return a instanceof Animal
