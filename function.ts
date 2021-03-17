@@ -1,5 +1,6 @@
 // //  函数声明
-// function add(x: number , y: number, z: number = 10):number{
+// //  可选参数要放在最后
+// function add(x: number , y: number, z?: number):number{
 //     if(typeof z === 'number'){
 //         return x + y +z
 //     }
@@ -16,4 +17,5 @@ const add = function add(x: number , y: number, z: number = 10):number{
 }
 const add2: (x: number, y: number, z?: number) => number = add
 
+//  类型推断
 let str = 'sc'
