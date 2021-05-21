@@ -1,29 +1,21 @@
-import React, {useState, useEffect, Fragment} from 'react'
+import React, {useState, useEffect} from 'react'
 
 const LikeButton: React.FC = () => {
     const [like, setLike] = useState(0)
     const [on, setOn] = useState(true)
-    // 默认每次渲染之后都执行
+    // 默认在第一次渲染之后，和每次更新之后都会执行
     useEffect(() => {
         document.title = `点击了${like}次`
     })
     return (
-        <Fragment>
-            <button onClick={() => {
-            // 这里是去替换它，而不是合并
-                setLike(like + 1)
-            }}>
-                {like} 👍
-            </button>
-            <button onClick={() => {
-            // 这里是去替换它，而不是合并
-                setOn(!on)
-            }}>
-                {on ? 'ON' : 'OFF'}
-            </button>
-        </Fragment>    
-        
+        <>
+        <button onClick={() => {setLike( like + 1)}}>
+            {like} 赞
+        </button>
+        <button onClick={() => {setOn(!on)}}>
+            {on ? 'on' : 'off'}
+        </button>
+        </>
     )
 }
-
 export default LikeButton;
